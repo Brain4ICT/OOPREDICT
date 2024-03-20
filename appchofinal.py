@@ -4,31 +4,24 @@ import numpy as np
 import plotly.graph_objs as go
 from streamlit_option_menu import option_menu
 
-# Fonction pour le forecasting ARIMA (avec des valeurs aléatoires)
 def arima_forecasting():
     return np.random.rand(12)
 
-# Fonction pour le forecasting Kernel Ridge Regression (avec des valeurs aléatoires)
 def kernel_ridge_forecasting():
     return np.random.rand(12)
 
-# Fonction pour le forecasting LSTM (avec des valeurs aléatoires)
 def lstm_forecasting():
     return np.random.rand(12)
 
-# Titre de l'application
 st.title('Olive Oil Prices: Modèles Prévisionnels')
 
-# Configuration de la barre de navigation horizontale avec streamlit_option_menu
 with st.sidebar:
     selected_tab = option_menu("", ['Accueil', 'Univariate Forecasting', 'Multivariate Forecasting'])
 
-# Contenu de l'onglet Accueil
 if selected_tab == 'Accueil':
     st.write("Bienvenue sur l'application de prévision des prix de l'huile d'olive.")
     st.write("Cette application vous permet de prévoir les prix de l'huile d'olive en utilisant différentes méthodes de prévision.")
 
-# Contenu de l'onglet Univariate Forecasting
 elif selected_tab == 'Univariate Forecasting':
     st.write("## Univariate Forecasting")
     st.write("Veuillez télécharger un fichier CSV contenant les données.")
@@ -48,7 +41,6 @@ elif selected_tab == 'Univariate Forecasting':
             fig.update_layout(xaxis_title='Semaine', yaxis_title='Prix', title='Univariate Forecasting')
             st.plotly_chart(fig)
 
-# Contenu de l'onglet Multivariate Forecasting
 elif selected_tab == 'Multivariate Forecasting':
     st.write("## Multivariate Forecasting")
     st.write("Remplissez les champs suivants avec les variables appropriées.")
